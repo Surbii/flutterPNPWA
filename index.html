@@ -59,7 +59,7 @@
         // Otherwise, the browser will load the script multiple times,
         // potentially different versions.
         var serviceWorkerUrl = 'flutter_service_worker.js?v=' + serviceWorkerVersion;
-        navigator.serviceWorker.register(serviceWorkerUrl,"/firebase-messaging-sw.js")
+        navigator.serviceWorker.register(serviceWorkerUrl)
           .then((reg) => {
             function waitForActivation(serviceWorker) {
               serviceWorker.addEventListener('statechange', () => {
@@ -97,10 +97,7 @@
           }
         }, 4000);
       });
-//          setTimeout(() => {
-//                      navigator.serviceWorker.register("/firebase-messaging-sw.js");
 
-//          },100);
     } else {
       // Service workers not supported. Just drop the <script> tag.
       loadMainDartJs();
