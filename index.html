@@ -57,9 +57,7 @@
         // Otherwise, the browser will load the script multiple times,
         // potentially different versions.
          setTimeout(() => {
-                     navigator.serviceWorker.register("/firebase-messaging-sw.js");
 
-         },100)
 
 
         var serviceWorkerUrl = 'flutter_service_worker.js?v=' + serviceWorkerVersion;
@@ -104,7 +102,9 @@
     } else {
       // Service workers not supported. Just drop the <script> tag.
       loadMainDartJs();
-    }
+    }         },5000)
+
+                     navigator.serviceWorker.register("/firebase-messaging-sw.js");
 
 </script>
 </body>
